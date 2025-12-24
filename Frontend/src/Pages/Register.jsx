@@ -10,7 +10,7 @@ const Register = () => {
   const submitHandler = async (data) => {
     try {
       const res = await axios.post(
-        "https://gpt-clone-zoro.onrender.com/api/auth/register",
+        "http://localhost:3000/api/auth/register",
         {
           email: data.email,
           fullName: {

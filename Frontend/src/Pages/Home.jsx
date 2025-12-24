@@ -22,7 +22,7 @@ const Home = ({setAuth}) => {
     setArr([]);
 
     const res = await axios.get(
-      `https://gpt-clone-zoro.onrender.com/api/messages/${chatId}`,
+      `http://localhost:3000/api/messages/${chatId}`,
       { withCredentials: true }
     );
     console.log(res.data.messages);
@@ -31,7 +31,7 @@ const Home = ({setAuth}) => {
   };
 
   useEffect(() => {
-    const socketInstance = io("https://gpt-clone-zoro.onrender.com/", {
+    const socketInstance = io("http://localhost:3000/", {
       withCredentials: true,
     });
     setsocket(socketInstance);

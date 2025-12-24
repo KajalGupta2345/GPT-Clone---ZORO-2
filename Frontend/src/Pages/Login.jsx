@@ -9,7 +9,7 @@ const Login = ({ setAuth }) => {
 
   const submitHandler = (data) => {
     axios.post(
-      "https://gpt-clone-zoro.onrender.com/api/auth/login",
+      "http://localhost:3000/api/auth/login",
       {
         email: data.email,
         password: data.password,

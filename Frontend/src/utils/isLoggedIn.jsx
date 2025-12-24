@@ -2,7 +2,7 @@ import axios from "axios";
 
 const isLoggedIn = async () => {
   try {
-    await axios.get("https://gpt-clone-zoro.onrender.com/api/auth/me", {
+    await axios.get("http://localhost:3000/api/auth/me", {
       withCredentials: true,
     });
     return true;

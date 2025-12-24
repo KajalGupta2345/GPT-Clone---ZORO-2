@@ -5,7 +5,6 @@ const userModel = require("../models/user.models");
 const aiService = require("../services/ai.service");
 const messageModel = require("../models/message.model");
 const { createMemory, queryMemory } = require('../services/vector.services');
-const { chat } = require('@pinecone-database/pinecone/dist/assistant/data/chat');
 
 
 function initSocketServer(httpServer) {
@@ -90,7 +89,7 @@ function initSocketServer(httpServer) {
                     queryVector: vectors,
                     limit: 3,
                     metadata: {
-                        user: socket.user_id
+                        user: socket.user._id
                     }
                 }),
                 (await messageModel.find({

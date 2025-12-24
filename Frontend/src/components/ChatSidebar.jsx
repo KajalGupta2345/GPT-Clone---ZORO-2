@@ -22,7 +22,7 @@ const ChatSidebar = ({
   };
   const handleDeleteChat = (id) => {
     axios
-      .delete(`https://gpt-clone-zoro.onrender.com/api/chat/${id}`, { withCredentials: true })
+      .delete(`http://localhost:3000/api/chat/${id}`, { withCredentials: true })
       .then((response) => {
         console.log(response);
         setChats((prev) => prev.filter((chat) => chat._id != id));
@@ -43,7 +43,7 @@ const ChatSidebar = ({
     setshowInput(false);
     try {
       const response = await axios.post(
-        "https://gpt-clone-zoro.onrender.com/api/chat/",
+        "http://localhost:3000/api/chat/",
         { title: data.title },
         { withCredentials: true }
       );
@@ -63,7 +63,7 @@ const ChatSidebar = ({
   };
   useEffect(() => {
     axios
-      .get("https://gpt-clone-zoro.onrender.com/api/chat/", {
+      .get("http://localhost:3000/api/chat/", {
         withCredentials: true,
       })
       .then((response) => {
